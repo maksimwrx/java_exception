@@ -3,11 +3,36 @@ package exception;
 public class First {
 
     public static void main(String[] args) {
-        divideByZero();
-        accessToUnexistingElement();
-        playWithNullPointer();
-        tryToCreateFunnyArray();
-        searchSomethingOutString();
+        try {
+            divideByZero();
+        } catch (ArithmeticException e) {
+            System.out.println("Исключение перехвачено"+e);
+        }
+
+        try {
+            accessToUnexistingElement();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Исключение перехвачено"+e);
+        }
+
+        try {
+            playWithNullPointer();
+        } catch (NullPointerException e) {
+            System.out.println("Исключение перехвачено"+e);
+        }
+
+        try {
+            tryToCreateFunnyArray();
+        } catch (NegativeArraySizeException e) {
+            System.out.println("Исключение перехвачено"+e);
+        }
+
+        try {
+            searchSomethingOutString();
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("Исключение перехвачено"+e);
+        }
+
         System.out.println("Ура! Меня снова печают");
     }
 
